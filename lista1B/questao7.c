@@ -9,16 +9,18 @@ Verifique se um inteiro é um quadrado perfeito.
 //------------------------------------------------------------------------------------------------------------------------------
 
 int main() {
-  int num;
+  int num, raizNum;
 
   printf("Digite um numero positivo para verificar se eh um quadrado perfeito:\n");
   scanf("%i", &num);
 
-  if (num >= 0) {
+  raizNum = sqrt(num);
 
+  if (raizNum*raizNum == num) {
+    printf("O numero %i eh um quadrado perfeito.\n", num);
   }
   else {
-    printf("Digite um numero positivo.\n");
+    printf("O numero %i nao eh um quadrado perfeito.\n", num);
   }
 
   return 0;

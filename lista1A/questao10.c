@@ -3,6 +3,8 @@
 #include "stdio.h"
 #include "math.h"
 
+//------------------------------------------------------------------------------------------------------------------------------
+
 int main() {
   float P1[2], P2[2], inclinacao, pontoDeCorte[2], coeficienteLinear;
 

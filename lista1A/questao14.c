@@ -3,6 +3,8 @@
 #include "stdio.h"
 #include "math.h"
 
+//------------------------------------------------------------------------------------------------------------------------------
+
 int main() {
   float massa, tPercurso, vInicial, forca, aceleracao, deslocamento;
 

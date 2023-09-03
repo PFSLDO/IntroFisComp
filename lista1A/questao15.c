@@ -10,6 +10,8 @@ O programa deve imprimir o novo comprimento e o incremento porcentual.
 #include "stdio.h"
 #include "math.h"
 
+//------------------------------------------------------------------------------------------------------------------------------
+
 int main() {
   float tInicial = 0, tFinal = 40, coefExpTerm = 0.0000105, compInicial, compFinal;
 

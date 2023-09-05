@@ -18,15 +18,15 @@ int main() {
   printf("Digite outro numero racional:\n");
   scanf("%f", &num3);
 
-  menorDiferenca = abs(10 - num1);
+  menorDiferenca = fabs(10 - num1);
 
   if (menorDiferenca > (abs(10 - num2))) {
-    menorDiferenca = abs(10 - num2);
+    menorDiferenca = fabs(10 - num2);
     printf("O numero racional mais proximo do 10 eh: %f\n", num2);
     return 0;
   }
   if (menorDiferenca > (abs(10 - num3))) {
-    menorDiferenca = abs(10 - num3);
+    menorDiferenca = fabs(10 - num3);
     printf("O numero racional mais proximo do 10 eh: %f\n", num3);
     return 0;
   }

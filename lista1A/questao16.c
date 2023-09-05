@@ -11,14 +11,13 @@ P e erro relativo
 
 #define CONSTGAS 0.2968
 #define PRESSAOEXP 10000
-#define EULER 2.71828182845904523
 
 //------------------------------------------------------------------------------------------------------------------------------
 
 const float temp = 175, volEsp = 0.00375, volEspMolar = 0.10505, rU = 8.314;
 
 float erroRelativo(float pressao) {
-  return abs(pressao - PRESSAOEXP) / PRESSAOEXP;
+  return fabs(pressao - PRESSAOEXP) / PRESSAOEXP;
 }
 
 void pressaoGasIdeal() {
@@ -44,7 +43,7 @@ void pressaoBeattie() {
   float beattie = 0, erro = 0;
   const float a = 102.29, b = 0.05378, c = 42000;
 
-  beattie = (rU * temp / pow(volEspMolar,2)) * (1 - c/volEspMolar*pow(temp,3)) * (volEspMolar + b) - a/pow(volEspMolar,2);
+  beattie = (rU * temp / pow(volEspMolar,2)) * (1 - c / (volEspMolar * pow(temp, 3))) * (volEspMolar + b) - a/pow(volEspMolar,2);
   erro = erroRelativo(beattie);
 
   printf("A pressao calculada atraves da equacao de Beattie-Bridgeman eh: %f +/- %f\n", beattie, erro);
@@ -54,7 +53,7 @@ void pressaoBenedict() {
   float benedict = 0, erro = 0;
   const float a = 2.54, b = 0.002328, c = 73790, alpha = 0.0001272, a0 = 106.73, b0 = 0.04074, c0 = 816400, gamma = 0.0053;
 
-  benedict = (rU*temp/volEspMolar) + (b0*rU*temp - a0 - c0/pow(temp,2)) * (1/pow(volEspMolar,2)) + ((b*rU*temp - a)/pow(volEspMolar,3)) + (a*alpha/pow(volEspMolar,6)) + (c/pow(volEspMolar,3)*pow(temp,2)) * (1 + gamma/pow(volEspMolar,2)) * pow(EULER, -(gamma/pow(volEspMolar,2)));
+  benedict = (rU*temp/volEspMolar) + (b0*rU*temp - a0 - c0/pow(temp,2)) * (1/pow(volEspMolar,2)) + ((b*rU*temp - a)/pow(volEspMolar,3)) + (a*alpha/pow(volEspMolar,6)) + (c/pow(volEspMolar,3)*pow(temp,2)) * (1 + gamma/pow(volEspMolar,2)) * exp(-(gamma/pow(volEspMolar,2)));
   erro = erroRelativo(benedict);
 
   printf("A pressao calculada atraves da equacao de Benedict-Webb-Rubin eh: %f +/- %f\n", benedict, erro);

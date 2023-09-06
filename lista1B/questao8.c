@@ -18,30 +18,24 @@ int main() {
   printf("Agora escolha seu x:\n");
   scanf("%f", &num);
 
-  switch (escolaCalculo) {
-    case 1:
-      calculoNum = exp(num);
-      printf("exp(%f) = %f\n", num, calculoNum);
-      break;
-    
-    case 2:
-      calculoNum = log(num);
-      printf("log(%f) = %f\n", num, calculoNum);
-      break;
-   
-    case 3:
-      calculoNum = pow(num,2);
-      printf("(%f)^2 = %f\n", num, calculoNum);
-      break;
-
-    case 4:
-      calculoNum = pow(num,0.5);
-      printf("(%f)^0.5 = %f\n", num, calculoNum);
-      break;
-
-    default:
-      printf("Escolha uma opcao valida.\n");
-      break;
+  if (escolaCalculo == 1) {
+    calculoNum = exp(num);
+    printf("exp(%f) = %f\n", num, calculoNum);
+  }
+  else if (escolaCalculo == 2) {
+    calculoNum = log(num);
+    printf("log(%f) = %f\n", num, calculoNum);
+  }
+  else if (escolaCalculo == 3) {
+    calculoNum = pow(num, 2);
+    printf("(%f)^2 = %f\n", num, calculoNum);
+  }
+  else if (escolaCalculo == 4) {
+    calculoNum = pow(num, 0.5);
+    printf("(%f)^0.5 = %f\n", num, calculoNum);
+  }
+  else {
+    printf("Escolha uma opcao valida.\n");
   }
 
   return 0;

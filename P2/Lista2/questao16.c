@@ -6,16 +6,27 @@
 
 //------------------------------------------------------------------------------------------------------------------------------
 
-int mmc(int num1, int num2)
-{
-  while(num2 != 0) {
-    int r = num1 % num2;
-    num1 = num2;
-    num2 = r;
+int mdc(int a, int b) {
+  if(b == 0) {
+    return a;
   }
-
-  return num1 * (num2 / num1);
+  else {
+    return mdc(b, a%b);
+  }
 }
+
+int mmc(int a, int b) {
+  int div;
+  
+  if (b == 0) {
+    return a;
+  } 
+  else {
+    div = (a*b)/(mdc(a,b));
+  } 
+
+  return (div); 
+}      
 
 int main() {
   int num1, num2;

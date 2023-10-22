@@ -6,32 +6,18 @@
 
 //------------------------------------------------------------------------------------------------------------------------------
 
-void ehPrimo (int value) {
-  int resultado = 0;
-
-  for (int i = 2; i <= value / 2; i++) {
-    if (value % i == 0) {
-       resultado++;
-    }
-  }
-  if (resultado == 0) {
-    printf("%i eh Primo\n", value);
-    return;
-  }
-  
-  printf("%i nao eh Primo\n", value);
-}
-
 int main() {
-  int num = 0;
+  int n, f0 = 0, f1 = 1, f;
  
-  printf("Digite um numero:\n");
-  scanf("%i", &num);
+  printf("Até qual valor da sequencia de Fibonacci voce deseja calcular?\n");
+  scanf("%i", &n);
+  printf("%i, %i", f0, f1);
 
-  printf("Vamos agora calcular quais numeros entre [0,%i] sao primos\n", num);
-
-  for (int i=2; i<num; i++) {
-    ehPrimo(i);
+  for (int i=2; i<n; i++) {
+    f = f0 + f1;
+    printf(", %i", f);
+    f0 = f1;
+    f1 = f;
   }
 
   return 0;

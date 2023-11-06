@@ -13,7 +13,7 @@ int main() {
     scanf("%d", &data[n]);
   }
 
-  max = -100;
+  max = data[0];
 
   for (n=0; n<N; n++) {
     if(data[n] > max) {

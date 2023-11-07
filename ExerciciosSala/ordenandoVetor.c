@@ -13,9 +13,25 @@ int main() {
 
   int data[N];
 
+  //gerando numeros aleatorios
   for (int i=0; i<N; i++) {
     data[i] = rand()%N + 1;
+    printf("%d ", data[i]);
   }
+  
+  //Organizando por ordem crescente
+  for (int j=0; j<N; j++) {
+    for (int i=0; i<N-1; i++) {
+      if(data[i]>data[i+1]) {
+        int temp = data[i];
+        data[i] = data[i+1];
+        data[i+1] = temp;
+      }
+    }
+  }
+
+  //Mostrando a saida
+  printf("\n");
 
   for (int i=0; i<N; i++) {
     printf("%d ", data[i]);
